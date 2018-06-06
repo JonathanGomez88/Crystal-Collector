@@ -9,82 +9,92 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB"
         crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="assets/css/styles.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
 </head>
 
 <body>
     <div id="wrapper">
 
-        <header id="mainTitle">
-            <h1>Crystal Collector</h1>
-        </header>
+        <header id="mainTitle" <div class="jumbotron jumbotron-fluid">
+            <div class="container">
+                <h1 class="display-4">Crystal Collector</h1>
+            </div>
+    
+    </header>
 
-        <div id="instructions">
-            <p>You will be given a random number at the start of the game.</p>
-            <p>There are four crystals below. By clicking on a crystal you will add a specific amount of points to your total
-                score.
-            </p>
-            <p>You win the game by matching your total score to the random number given. You lose the game if your total score
-                goes above the random number.</p>
-            <p>The value of each crystal is hidden from you until you click on it.</p>
-            <p>The value of each crystal will change every time the game starts.</p>
-
-        </div>
-
-        <div id="randomNumber">
-        </div>
-
-        <div id="wins/losses">
-        </div>
-
-
-        <div class="container">
-            <div class="row">
-                <div class="col-sm">
-                    <div class="crystal">
-                        <img src="assets/images/gem1.jpg">
-                    </div>
-                </div>
-
-                <div class="col-sm">
-                    <div class="crystal">
-                        <img src="assets/images/gem2.jpg">
-                    </div>
-                </div>
-
-                <div class="col-sm">
-                    <div class="crystal">
-                        <img src="assets/images/gem3.jpg">
-                    </div>
-                </div>
-
-                <div class="col-sm">
-                    <div class="crystal">
-                        <img src="assets/images/gem4.jpg">
-                    </div>
-                </div>
-                <div class="col-sm">
-                </div>
-
-                <div class="col-sm">
-                </div>
-
-                <div class="col-sm">
-                </div>
-
-                <div class="col-sm">
-                </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6" id="instructions">
+                <p>You will be given a random number at the start of the game.</p>
+                <p>There are four crystals below. By clicking on a crystal you will add a specific amount of points to your
+                    total score.
+                </p>
+                <p>You win the game by matching your total score to the random number given. You lose the game if your total
+                    score goes above the random number.</p>
+                <p>The value of each crystal is hidden from you until you click on it.</p>
+                <p>The value of each crystal will change every time the game starts.</p>
             </div>
         </div>
+    
+    </div>
+
+    <div id="randomNumber">
+        <p>Random Number</p>
+    </div>
+
+    <div id="winslosses">
+        <p>Wins and Losses</p>
+    </div>
 
 
-        <div id="totalScoreIs" <p>Your total score is:</p>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm">
+                <div class="crystal" id="crystal1">
+                    <img src="assets/images/gem1.jpg">
+                </div>
+            </div>
+
+            <div class="col-sm">
+                <div class="crystal" id="crystal2">
+                    <img src="assets/images/gem2.jpg">
+                </div>
+            </div>
+
+            <div class="col-sm">
+                <div class="crystal" id="crystal3">
+                    <img src="assets/images/gem3.jpg">
+                </div>
+            </div>
+
+            <div class="col-sm">
+                <div class="crystal" id="crystal4">
+                    <img src="assets/images/gem4.jpg">
+                </div>
+            </div>
+            <div class="col-sm">
+            </div>
+
+            <div class="col-sm">
+            </div>
+
+            <div class="col-sm">
+            </div>
+
+            <div class="col-sm">
+            </div>
         </div>
+    </div>
 
-        <div id="totalScore" </div>
-            <!-- wrapper div -->
-        </div>
-        <!-- wrapper div -->
 
+    <div id="totalScore" 
+        <p>Total Score</p>
+    </div>
+    <!-- wrapper div -->
+    </div>
+    <!-- wrapper div -->
+    <script src="assets/javascript/game.js"></script>
 
 </body>
 
