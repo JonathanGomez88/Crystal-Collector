@@ -50,6 +50,7 @@ $("#crystal1").on("click", function () {
 
 }
 )
+
 $("#crystal2").on("click", function () {
     totalScore = totalScore + crystal2
     $("#totalScore").html("Total Score" + "<br><hr>" + totalScore);
@@ -70,6 +71,7 @@ $("#crystal4").on("click", function () {
 
 }
 )
+
 // If total score === random number increase wins++ and reset
 if (randomNumber === totalScore) {
     wins++;
@@ -80,6 +82,7 @@ if (randomNumber === totalScore) {
 // If total score > random number losses++ and reset
 
 else if (totalScore > randomNumber) {
+    console.log("if statement working")
     losses++;
     reset();
 
