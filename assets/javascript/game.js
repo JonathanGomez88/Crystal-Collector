@@ -11,26 +11,27 @@ var crystal4 = Math.floor(Math.random() * 12) + 1;
 
 $("#randomNumber").html("Random Number" + "<br><hr>" + randomNumber);
 $("#totalScore").html("Total Score" + "<br><hr>" + totalScore);
+$("#winslosses").html("Wins" + "<br>" + wins + "<hr>" + "Losses" + "<br>" + losses)
 
 // A function that resets the game
 
-function Reset() {
+function reset() {
 
-    var totalScore = 0;
+    totalScore = 0;
 
-    var randomNumber = Math.floor(Math.random() * 100) + 20;
+    randomNumber = Math.floor(Math.random() * 100) + 20;
     console.log(randomNumber);
 
-    var crystal1 = Math.floor(Math.random() * 12) + 1;
+    crystal1 = Math.floor(Math.random() * 12) + 1;
     console.log(crystal1);
 
-    var crystal2 = Math.floor(Math.random() * 12) + 1;
+    crystal2 = Math.floor(Math.random() * 12) + 1;
     console.log(crystal2);
 
-    var crystal3 = Math.floor(Math.random() * 12) + 1;
+    crystal3 = Math.floor(Math.random() * 12) + 1;
     console.log(crystal3);
 
-    var crystal4 = Math.floor(Math.random() * 12) + 1;
+    crystal4 = Math.floor(Math.random() * 12) + 1;
     console.log(crystal4);
 }
 
@@ -44,23 +45,44 @@ function Reset() {
 // Each time user clicks on the crystal that many pts need to be added to the total score
 
 $("#crystal1").on("click", function () {
-    $("#totalScore").html("Total Score" + "<br><hr>" + crystal1 + totalScore);
+    totalScore = totalScore + crystal1
+    $("#totalScore").html("Total Score" + "<br><hr>" + totalScore);
+
+}
+)
+$("#crystal2").on("click", function () {
+    totalScore = totalScore + crystal2
+    $("#totalScore").html("Total Score" + "<br><hr>" + totalScore);
+
+}
+)
+
+$("#crystal3").on("click", function () {
+    totalScore = totalScore + crystal3
+    $("#totalScore").html("Total Score" + "<br><hr>" + totalScore);
+
+}
+)
+
+$("#crystal4").on("click", function () {
+    totalScore = totalScore + crystal4
+    $("#totalScore").html("Total Score" + "<br><hr>" + totalScore);
+
+}
+)
+// If total score === random number increase wins++ and reset
+if (randomNumber === totalScore) {
+    wins++;
+    reset();
+}
+
+
+// If total score > random number losses++ and reset
+
+else if (totalScore > randomNumber) {
+    losses++;
+    reset();
 
 }
 
 
-
-
-    // If total score === random number increase wins++ and reset
-    //     if(randomNumber === totalScore) {
-    //     wins++;
-    //     reset;
-    // }
-
-
-    // If total score > random number losses++ and reset
-
-    // if (totalScore > randomNumber) {
-    //     losses++;
-    // //     reset;
-)
