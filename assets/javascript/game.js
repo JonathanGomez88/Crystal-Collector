@@ -9,9 +9,7 @@ var crystal2 = Math.floor(Math.random() * 12) + 1;
 var crystal3 = Math.floor(Math.random() * 12) + 1;
 var crystal4 = Math.floor(Math.random() * 12) + 1;
 
-$("#randomNumber").html("Random Number" + "<br><hr>" + randomNumber);
-$("#totalScore").html("Total Score" + "<br><hr>" + totalScore);
-$("#winslosses").html("Wins" + "<br>" + wins + "<hr>" + "Losses" + "<br>" + losses)
+
 
 // A function that resets the game
 
@@ -33,12 +31,35 @@ function reset() {
 
     crystal4 = Math.floor(Math.random() * 12) + 1;
     console.log(crystal4);
+
+    displayTotals ()
+}
+
+function displayTotals () {
+    $("#randomNumber").html("Random Number" + "<br><hr>" + randomNumber);
+    $("#totalScore").html("Total Score" + "<br><hr>" + totalScore);
+    $("#winslosses").html("Wins" + "<br>" + wins + "<hr>" + "Losses" + "<br>" + losses)
 }
 
 
+// This function checks to see the conditions of the game
 
-// Each Crystal will be given a data attribute called data-crystalValue.
-// This data attribute will be set equal to the array value.
+function conditions() {
+
+    if (randomNumber === totalScore) {
+        wins++;
+        reset();
+    }
+
+    else if (totalScore > randomNumber) {
+        losses++;
+        reset();
+
+    }
+
+    displayTotals()
+
+}
 
 
 
@@ -47,6 +68,7 @@ function reset() {
 $("#crystal1").on("click", function () {
     totalScore = totalScore + crystal1
     $("#totalScore").html("Total Score" + "<br><hr>" + totalScore);
+    conditions()
 
 }
 )
@@ -54,6 +76,7 @@ $("#crystal1").on("click", function () {
 $("#crystal2").on("click", function () {
     totalScore = totalScore + crystal2
     $("#totalScore").html("Total Score" + "<br><hr>" + totalScore);
+    conditions()
 
 }
 )
@@ -61,6 +84,7 @@ $("#crystal2").on("click", function () {
 $("#crystal3").on("click", function () {
     totalScore = totalScore + crystal3
     $("#totalScore").html("Total Score" + "<br><hr>" + totalScore);
+    conditions()
 
 }
 )
@@ -68,24 +92,9 @@ $("#crystal3").on("click", function () {
 $("#crystal4").on("click", function () {
     totalScore = totalScore + crystal4
     $("#totalScore").html("Total Score" + "<br><hr>" + totalScore);
+    conditions()
 
 }
 )
 
-// If total score === random number increase wins++ and reset
-if (randomNumber === totalScore) {
-    wins++;
-    reset();
-}
-
-
-// If total score > random number losses++ and reset
-
-else if (totalScore > randomNumber) {
-    console.log("if statement working")
-    losses++;
-    reset();
-
-}
-
-
+reset()
